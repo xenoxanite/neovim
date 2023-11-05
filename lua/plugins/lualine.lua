@@ -11,7 +11,7 @@ local function lsp_clients()
 					table.insert(client_names, "[" .. client.name .. "]")
 				end
 			end
-			return " LSP:" .. table.concat(client_names, " ")
+			return "  LSP:" .. table.concat(client_names, " ")
 		end,
 	})
 end
@@ -36,15 +36,15 @@ return {
 				theme = "auto",
 				globalstatus = true,
 			},
-			winbar = {
-				lualine_c = { { "filename", path = 2 } },
-			},
+			-- winbar = {
+				-- lualine_c = { { "filename", path = 2 } },
+			-- },
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = {
 					lsp_clients,
 					"branch",
-					{ "diff", symbols = { added = " ", modified = "柳 ", removed = " " } },
+					{ "diff", symbols = { added = " ", modified = " ", removed = " " } },
 					{
 						"diagnostics",
 						sources = { "nvim_diagnostic" },
