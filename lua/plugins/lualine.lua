@@ -33,11 +33,13 @@ return {
 		},
 		opts = {
 			options = {
+				component_separators = { left = "|", right = "|" },
+				section_separators = { left = " ", right = " " },
 				theme = "auto",
 				globalstatus = true,
 			},
 			-- winbar = {
-				-- lualine_c = { { "filename", path = 2 } },
+			-- lualine_c = { { "filename", path = 2 } },
 			-- },
 			sections = {
 				lualine_a = { "mode" },
