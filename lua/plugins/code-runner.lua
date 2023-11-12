@@ -10,8 +10,8 @@ return {
         python = "python3 -u",
         typescript = "deno run",
         rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
-        c = "cd $dir && mkdir -p bin && cd bin && gcc ../$fileName -lm -o $fileNameWithoutExt && ./$fileNameWithoutExt < input.txt > output.txt",
-        cpp = "cd $dir && mkdir -p bin && cd bin && g++ ../$fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt < input.txt > output.txt",
+        c = "cd $dir && mkdir -p bin && cd bin && gcc ../$fileName -lm -o $fileNameWithoutExt && ./$fileNameWithoutExt",
+        cpp = "cd $dir && mkdir -p bin && cd bin && g++ ../$fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
       },
       project = {},
     })
