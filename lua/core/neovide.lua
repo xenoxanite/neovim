@@ -3,7 +3,7 @@ if vim.g.neovide then
   vim.opt.linespace = 3
   vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_hide_mouse_when_typing = true
-  vim.g.neovide_transparency = 0.8
+  vim.g.neovide_transparency = 0.85
   vim.g.neovide_refresh_rate = 75
   vim.g.neovide_no_idle = true
   vim.g.neovide_cursor_animate_in_insert_mode = true

@@ -17,12 +17,13 @@ local nightfox = {
 }
 
 local pywal = {
-  "uZer/pywal16.nvim",
-  as = "pywal16",
+  "xenoxanite/pywal.nvim",
+  as = "pywal",
   config = function()
-    local pywal16 = require("pywal16")
-
-    pywal16.setup()
+    -- local pywal16 = require("pywal16")
+    -- pywal16.setup()
+    local pywal = require("pywal")
+    pywal.setup()
   end,
   priority = 1000, -- recommended to ensure the colorscheme
   -- is loaded before other plugins
