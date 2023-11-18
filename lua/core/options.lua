@@ -38,7 +38,6 @@ local options = {
     title = true, -- show title in terminal header
   }
 vim.opt.shortmess:append "c"
-
 for key,value in pairs(options) do
 	vim.opt[key] = value
 end

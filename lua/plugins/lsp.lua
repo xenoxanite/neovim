@@ -28,7 +28,7 @@ return {
 
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-		local servers = { "lua_ls", "clangd", "nil_ls", "tsserver" }
+		local servers = { "lua_ls", "clangd", "nil_ls", "tsserver", "rust_analyzer" }
 
 		local lspconfig = require("lspconfig")
 
