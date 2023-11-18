@@ -4,7 +4,7 @@ return {
   config = function()
     local nvimtree = require("nvim-tree")
     -- require("vim.highlight").define("nvim-tree", {
-      -- bg = "transparent",
+    -- bg = "transparent",
     -- })
     -- recommended settings from nvim-tree documentation
     vim.g.loaded_netrw = 1
@@ -75,10 +75,10 @@ return {
     })
 
     -- set keymaps
-    local keymap = vim.keymap                                                                   -- for conciseness
+    local keymap = vim.keymap                                                                     -- for conciseness
 
-    keymap.set("n", "<leader>ee", "<cmd>NvimTreeFocus<CR>", { desc = "Toggle file explorer" })  -- toggle file explorer
-    keymap.set("n", "<leader>eq", "<cmd>NvimTreeClose<CR>", { desc = "Quit file explorer" }) -- collapse file explorer
+    keymap.set("n", "<leader>ee", "<cmd>NvimTreeFocus<CR>", { desc = "Toggle file explorer" })    -- toggle file explorer
+    keymap.set("n", "<leader>eq", "<cmd>NvimTreeClose<CR>", { desc = "Quit file explorer" })      -- collapse file explorer
     keymap.set("n", "<leader>ec", "<cmd>NvimTreeCollapse<CR>", { desc = "Collapse file explorer" }) -- collapse file explorer
     keymap.set("n", "<leader>er", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh file explorer" }) -- refresh file explorer
   end,

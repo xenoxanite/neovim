@@ -25,8 +25,17 @@ local pywal = {
     local pywal = require("pywal")
     pywal.setup()
   end,
-  priority = 1000, -- recommended to ensure the colorscheme
-  -- is loaded before other plugins
+  priority = 1000,
 }
 
-return pywal
+local decay = {
+  "decaycs/decay.nvim",
+  config = function()
+    require("decay").setup({
+      style = "dark",
+    })
+  end,
+}
+
+
+return decay

@@ -1,42 +1,67 @@
 return {
-  "neovim/nvim-lspconfig",
-  dependencies = {
-    "sar/cmp-lsp.nvim",
-  },
-  config = function()
-    vim.diagnostic.config({
-      virtual_text = false,
-    })
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "sar/cmp-lsp.nvim",
+    },
+    config = function()
+      local lspconfig = require("lspconfig")
 
-    -- Show line diagnostics automatically in hover window
-    vim.o.updatetime = 250
-    vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
+local M = {}
 
-    local lsp = vim.lsp
+M.on_attach = function(client, _)
+  client.server_capabilities.documentFormattingProvider = true
+  client.server_capabilities.documentRangeFormattingProvider = true
+  client.server_capabilities.semanticTokensProvider = nil
+end
 
-    local on_attach = function(client, bufnr)
-      local map_opts = {
-        buffer = true,
-        silent = true,
-      }
-      local float_window_width = 45
-      -- lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
-      -- border = "rounded",
-      -- width = float_window_width,
-      -- })
-    end
+M.capabilities = vim.lsp.protocol.make_client_capabilities()
 
-    local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-    local servers = { "lua_ls", "clangd", "nil_ls", "tsserver", "rust_analyzer" }
-
-    local lspconfig = require("lspconfig")
-
-    for _, lang in pairs(servers) do
-      lspconfig[lang].setup({
-        on_attach = on_attach,
-        capabilities = capabilities,
-      })
-    end
-  end,
+M.capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true
 }
+
+M.capabilities.textDocument.completion.completionItem = {
+  documentationFormat = { "markdown", "plaintext" },
+  snippetSupport = true,
+  preselectSupport = true,
+  insertReplaceSupport = true,
+  labelDetailsSupport = true,
+  deprecatedSupport = true,
+  commitCharactersSupport = true,
+  tagSupport = { valueSet = { 1 } },
+  resolveSupport = {
+    properties = {
+      "documentation",
+      "detail",
+      "additionalTextEdits",
+    },
+  },
+}
+
+
+local servers = { "nil_ls", "clangd", "rust_analyzer", "lua_ls", "tsserver" }
+for _, k in ipairs(servers) do
+  lspconfig[k].setup {
+    on_attach = M.on_attach,
+    capabilities = M.capabilities,
+  }
+end
+lspconfig.lua_ls.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  settings = {
+    Lua = {
+      completion = {
+        callSnippet = "Replace"
+      },
+      diagnostics = {
+        globals = { "vim", "awesome", "client", "screen", "mouse" },
+      },
+    },
+  }
+}
+return M
+    end,
+  }

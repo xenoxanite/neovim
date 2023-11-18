@@ -7,7 +7,7 @@ return {
     local actions = require("telescope.actions")
 
     telescope.setup({
-border_radius = 0,
+      border_radius = 0,
       defaults = {
         path_display = { "truncate " },
         mappings = {
