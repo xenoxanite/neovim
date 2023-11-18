@@ -2,7 +2,7 @@ return {
 	"goolord/alpha-nvim",
 	config = function()
 		local dashboard = require("alpha.themes.dashboard")
-    local alpha = require("alpha")
+		local alpha = require("alpha")
 		dashboard.section.header.val = {
 
 			[[          ▀████▀▄▄              ▄█ ]],
@@ -21,7 +21,6 @@ return {
 			dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
 			dashboard.button("r", "󱡣  Recently used files", ":Telescope oldfiles <CR>"),
 			dashboard.button("t", "  Find text", ":Telescope live_grep <CR>"),
-			dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua<CR>"),
 			dashboard.button("q", "󰿅  Quit Neovim", ":qa<CR>"),
 		}
 		local function footer()
