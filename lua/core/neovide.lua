@@ -1,6 +1,6 @@
 if vim.g.neovide then
-  vim.o.guifont = "Iosevka nerd font:h14"
-  vim.opt.linespace = 4
+  vim.o.guifont = "ComicShannsMono nerd font:h14"
+  vim.opt.linespace = 3
   vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_hide_mouse_when_typing = true
   vim.g.neovide_transparency = 0.95

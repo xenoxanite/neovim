@@ -1,4 +1,4 @@
-local opts = { noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 vim.g.mapleader = " "
@@ -20,4 +20,14 @@ keymap("n", "<S-k>", ":resize -2<cr>", opts)
 
 -- basic controll
 keymap("n", "<C-s>", ":write<cr>", opts)
+-- Define normal mode key mappings for Ctrl+hjkl
+vim.api.nvim_set_keymap("n", "<C-j>", "<Down>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-k>", "<Up>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<Right>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<Left>", { noremap = true })
 
+-- Define insert mode key mappings for Ctrl+hjkl
+vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true })
+vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true })
