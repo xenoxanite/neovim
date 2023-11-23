@@ -37,5 +37,4 @@ local decay = {
   end,
 }
 
-
-return decay
+return {}

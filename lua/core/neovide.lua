@@ -11,4 +11,8 @@ if vim.g.neovide then
   vim.g.neovide_cursor_vfx_particle_density = 20
   vim.g.neovide_scroll_animation_length = 0.3
   vim.g.neovide_cursor_vfx_particle_lifetime = 0.5
+  vim.g.neovide_padding_top = 10
+  vim.g.neovide_padding_bottom = 10
+  vim.g.neovide_padding_right = 15
+  vim.g.neovide_padding_left = 15
 end

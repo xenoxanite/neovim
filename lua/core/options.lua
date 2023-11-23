@@ -9,7 +9,7 @@ local options = {
     hlsearch = true, -- highlight all matches on previous search pattern
     incsearch = true, -- enable incsearch
     ignorecase = true, -- ignore case in search patterns
-    mouse = "a", -- allow the mouse to be used in neovim
+    mouse = "", -- allow the mouse to be used in neovim
     pumheight = 10, -- pop up menu height
     showmode = false, -- we don't need to see things like -- INSERT -- anymore
     showtabline = 0, -- don't show tabs
@@ -35,7 +35,7 @@ local options = {
     scrolloff = 8, -- is one of my fav
     sidescrolloff = 8,
     errorbells = false, -- no error bells
-    title = true, -- show title in terminal header
+    title = true, -- show title in terminal header.
   }
 vim.opt.shortmess:append "c"
 for key,value in pairs(options) do
