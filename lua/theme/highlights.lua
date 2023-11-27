@@ -1,5 +1,5 @@
 local M = {}
-local config = require("pkgs.theme.config")
+local config = require("theme.config")
 
 function M.hi(...)
   vim.api.nvim_set_hl(0, ...)
@@ -27,11 +27,11 @@ function M.highlight_all(colors, opts)
 
   if ntree.contrast == true then
     M.bulk_hi({
-      NvimTreeNormal = { bg = colors.contrast },
-      NvimTreeNormalNC = { bg = colors.contrast },
-      NvimTreeEndOfBuffer = { bg = colors.contrast, fg = colors.contrast },
-      NvimTreeEndOfBufferNC = { bg = colors.contrast, fg = colors.contrast },
-      NvimTreeVertSplit = { fg = colors.background, bg = colors.background },
+      NvimTreeVertSplit = { bg = colors.background, fg = colors.contrast },
+      NvimTreeNormal = { bg = colors.background },
+      NvimTreeNormalNC = { bg = colors.background },
+      NvimTreeEndOfBuffer = { bg = colors.background, fg = colors.contrast },
+      NvimTreeEndOfBufferNC = { bg = colors.background, fg = colors.contrast },
     })
   end
 
@@ -63,7 +63,7 @@ function M.highlight_all(colors, opts)
       CmpItemKindModule = { fg = colors.background, bg = colors.magenta },
       CmpItemKindOperator = { fg = colors.background, bg = colors.magenta },
 
-      CmpItemKindVariable = { fg = colors.black, bg = colors.white },
+      CmpItemKindVariable = { fg = colors.black, bg = colors.magenta },
       CmpItemKindFile = { fg = colors.black, bg = colors.white },
 
       CmpItemKindUnit = { fg = colors.background, bg = colors.yellow },
@@ -94,10 +94,6 @@ function M.highlight_all(colors, opts)
 
   if opts.override then
     M.bulk_hi(opts.override)
-  end
-
-  if colors["@overrides"] and type(colors["@overrides"]) == "function" then
-    M.bulk_hi(colors["@overrides"](colors))
   end
 end
 

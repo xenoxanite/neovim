@@ -1,8 +1,8 @@
 local M = {}
-local core = require('pkgs.theme.core')
-local highlights = require('pkgs.theme.highlights')
+local core = require("theme.core")
+local highlights = require("theme.highlights")
 
-function M.setup (opts)
+function M.setup(opts)
   if opts == nil then
     opts = {
       cmp = {
@@ -10,13 +10,13 @@ function M.setup (opts)
       },
       italics = {
         code = true,
-        comments = false
-      }
+        comments = false,
+      },
     }
   end
   -- disable bold
-  vim.cmd [[ set t_md= ]]
-	vim.opt.termguicolors = true
+  vim.cmd([[ set t_md= ]])
+  vim.opt.termguicolors = true
 
   local cmp_opts = opts.cmp or { block_kind = false }
 

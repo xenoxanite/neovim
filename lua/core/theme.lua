@@ -1,15 +1,15 @@
 -- theme is based on the decay one
-local theme = require("pkgs.theme")
-theme.setup {
-  style = 'normal',
+local theme = require("theme")
+theme.setup({
+  style = "normal",
   nvim_tree = {
     contrast = true,
   },
   cmp = {
-    block_kind = true
+    block_kind = true,
   },
   italics = {
-    code = false,
-    comments = false,
-  }
-}
+    code = true,
+    comments = true,
+  },
+})

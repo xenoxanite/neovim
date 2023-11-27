@@ -1,5 +1,4 @@
 local M = {}
-local util = require("decay.util")
 
 M.highlights_base = function(colors, opts)
   return {
@@ -87,98 +86,98 @@ M.highlights_base = function(colors, opts)
     Ignore = { fg = colors.white, bg = colors.background },
     Todo = { fg = colors.red, bg = colors.background },
     Error = { fg = colors.red, bg = colors.background },
-    TabLine = { fg = colors.green, bg = colors.contrast },
+    TabLine = { fg = colors.green, bg = colors.background },
     TabLineSel = { fg = colors.foreground, bg = colors.background },
     TabLineFill = { fg = colors.foreground, bg = colors.background },
     -- Treesitter
     ["@comment"] = { fg = colors.comments },
     ["@error"] = { fg = colors.red },
-    ["@preproc"] = { fg = colors.magenta }, -- various preprocessor directives & shebangs
-    ["@define"] = { fg = colors.magenta },  -- preprocessor definition directives
-    ["@operator"] = { fg = colors.cyan },   -- For any operator: +, but also -> and * in cp.
+    ["@preproc"] = { fg = colors.magenta },                                    -- various preprocessor directives & shebangs
+    ["@define"] = { fg = colors.magenta },                                     -- preprocessor definition directives
+    ["@operator"] = { fg = colors.cyan },                                      -- For any operator: +, but also -> and * in cp.
     -- Punctuation
-    ["@punctuation.delimiter"] = { fg = colors.cyan },      -- For delimiters ie: .
-    ["@punctuation.bracket"] = { fg = colors.brightblack }, -- For brackets and parenthesis.
-    ["@punctuation.special"] = { fg = colors.cyan },        -- For special punctutation that does not fall in the catagories before.
+    ["@punctuation.delimiter"] = { fg = colors.cyan },                         -- For delimiters ie: .
+    ["@punctuation.bracket"] = { fg = colors.brightblack },                    -- For brackets and parenthesis.
+    ["@punctuation.special"] = { fg = colors.cyan },                           -- For special punctutation that does not fall in the catagories before.
     -- Literals
-    ["@string"] = { fg = colors.green },           -- For strings.
-    ["@string.regex"] = { fg = colors.yellow },    -- For regexes.
-    ["@string.escape"] = { fg = colors.yellow },   -- For escape characters within a string.
-    ["@string.special"] = { fg = colors.green },   -- other special strings (e.g. dates)
-    ["@character"] = { fg = colors.blue },         -- character literals
-    ["@character.special"] = { fg = colors.blue }, -- special characters (e.g. wildcards)
-    ["@boolean"] = { fg = colors.magenta },        -- For booleans.
-    ["@number"] = { fg = colors.red },             -- For all numbers
-    ["@float"] = { fg = colors.red },              -- For floats.
+    ["@string"] = { fg = colors.green },                                       -- For strings.
+    ["@string.regex"] = { fg = colors.yellow },                                -- For regexes.
+    ["@string.escape"] = { fg = colors.yellow },                               -- For escape characters within a string.
+    ["@string.special"] = { fg = colors.green },                               -- other special strings (e.g. dates)
+    ["@character"] = { fg = colors.blue },                                     -- character literals
+    ["@character.special"] = { fg = colors.blue },                             -- special characters (e.g. wildcards)
+    ["@boolean"] = { fg = colors.magenta },                                    -- For booleans.
+    ["@number"] = { fg = colors.red },                                         -- For all numbers
+    ["@float"] = { fg = colors.red },                                          -- For floats.
     -- Functions
-    ["@function"] = { fg = colors.blue },         -- For function (calls and definitions).
-    ["@function.builtin"] = { fg = colors.blue }, -- For builtin functions: table.insert in Lua.
-    ["@function.call"] = { fg = colors.blue },    -- function calls
-    ["@function.macro"] = { fg = colors.cyan },   -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
-    ["@method"] = { fg = colors.blue },           -- For method calls and definitions.
-    ["@method.call"] = { fg = colors.blue },      -- method calls
-    ["@constructor"] = { fg = colors.yellow },    -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-    ["@parameter"] = { fg = colors.teal },        -- For parameters of a function.
+    ["@function"] = { fg = colors.blue },                                      -- For function (calls and definitions).
+    ["@function.builtin"] = { fg = colors.blue },                              -- For builtin functions: table.insert in Lua.
+    ["@function.call"] = { fg = colors.blue },                                 -- function calls
+    ["@function.macro"] = { fg = colors.cyan },                                -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
+    ["@method"] = { fg = colors.blue },                                        -- For method calls and definitions.
+    ["@method.call"] = { fg = colors.blue },                                   -- method calls
+    ["@constructor"] = { fg = colors.yellow },                                 -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+    ["@parameter"] = { fg = colors.teal },                                     -- For parameters of a function.
     -- Keywords
-    ["@keyword"] = { fg = colors.magenta, italic = opts.italics.code },          -- For keywords that don't fall in previous categories.
+    ["@keyword"] = { fg = colors.magenta, italic = opts.italics.code },        -- For keywords that don't fall in previous categories.
     ["@keyword.function"] = { fg = colors.magenta, italic = opts.italics.code }, -- For keywords used to define a fuction.
-    ["@keyword.operator"] = { fg = colors.magenta },                             -- For new keyword operator
+    ["@keyword.operator"] = { fg = colors.magenta },                           -- For new keyword operator
     ["@keyword.return"] = { fg = colors.magenta, italic = opts.italics.code },
-    ["@conditional"] = { fg = colors.magenta, italic = opts.italics.code }, -- For keywords related to conditionnals.
-    ["@repeat"] = { fg = colors.magenta, italic = opts.italics.code },      -- For keywords related to loops.
+    ["@conditional"] = { fg = colors.magenta, italic = opts.italics.code },    -- For keywords related to conditionnals.
+    ["@repeat"] = { fg = colors.magenta, italic = opts.italics.code },         -- For keywords related to loops.
     -- @debug            ; keywords related to debugging
-    ["@label"] = { fg = colors.magenta },                                   -- For labels: label: in C and :label: in Lua.
-    ["@include"] = { fg = colors.magenta, italic = opts.italics.code },     -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-    ["@exception"] = { fg = colors.red, italic = opts.italics.code },       -- For exception related keywords.
+    ["@label"] = { fg = colors.magenta },                                      -- For labels: label: in C and :label: in Lua.
+    ["@include"] = { fg = colors.magenta, italic = opts.italics.code },        -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+    ["@exception"] = { fg = colors.red, italic = opts.italics.code },          -- For exception related keywords.
     -- Types
 
-    ["@type"] = { fg = colors.orange },            -- For types.
-    ["@type.builtin"] = { fg = colors.orange },    -- For builtin types.
-    ["@type.definition"] = { fg = colors.cyan },   -- type definitions (e.g. `typedef` in C)
+    ["@type"] = { fg = colors.orange },          -- For types.
+    ["@type.builtin"] = { fg = colors.orange },  -- For builtin types.
+    ["@type.definition"] = { fg = colors.cyan }, -- type definitions (e.g. `typedef` in C)
     ["@type.qualifier"] = { fg = colors.magenta }, -- type qualifiers (e.g. `const`)
-    ["@storageclass"] = { fg = colors.yellow },    -- visibility/life-time/etc. modifiers (e.g. `static`)
-    ["@attribute"] = { fg = colors.blue },         -- attribute annotations (e.g. Python decorators)
-    ["@field"] = { fg = colors.cyan },             -- For fields.
-    ["@property"] = { fg = colors.lavender },      -- Same as TSField.
+    ["@storageclass"] = { fg = colors.yellow },  -- visibility/life-time/etc. modifiers (e.g. `static`)
+    ["@attribute"] = { fg = colors.blue },       -- attribute annotations (e.g. Python decorators)
+    ["@field"] = { fg = colors.cyan },           -- For fields.
+    ["@property"] = { fg = colors.lavender },    -- Same as TSField.
     -- Identifiers
 
-    ["@variable"] = { fg = colors.foreground },     -- Any variable name that does not have another highlighcp.
+    ["@variable"] = { fg = colors.foreground },   -- Any variable name that does not have another highlighcp.
     ["@variable.builtin"] = { fg = colors.yellow }, -- Variable names that are defined by the languages, like this or self.
-    ["@constant"] = { fg = colors.orange },         -- For constants
+    ["@constant"] = { fg = colors.orange },       -- For constants
     ["@constant.builtin"] = { fg = colors.yellow }, -- For constant that are built in the language: nil in Lua.
-    ["@constant.macro"] = { fg = colors.red },      -- For constants that are defined by macros: NULL in cp.
-    ["@namespace"] = { fg = colors.magenta },       -- For identifiers referring to modules and namespaces.
+    ["@constant.macro"] = { fg = colors.red },    -- For constants that are defined by macros: NULL in cp.
+    ["@namespace"] = { fg = colors.magenta },     -- For identifiers referring to modules and namespaces.
     ["@symbol"] = { fg = colors.magenta },
     -- Text
 
-    ["@text"] = { fg = colors.foreground },                             -- For strings considerated text in a markup language.
-    ["@text.strong"] = { fg = colors.foreground },                      -- italic
+    ["@text"] = { fg = colors.foreground },                           -- For strings considerated text in a markup language.
+    ["@text.strong"] = { fg = colors.foreground },                    -- italic
     ["@text.emphasis"] = { fg = colors.cyan },
     ["@text.underline"] = { sp = colors.foreground, undercurl = true }, -- underlined text
-    ["@text.strike"] = { fg = colors.foreground },                      -- strikethrough text
-    ["@text.title"] = { fg = colors.blue },                             -- titles like: # Example
+    ["@text.strike"] = { fg = colors.foreground },                    -- strikethrough text
+    ["@text.title"] = { fg = colors.blue },                           -- titles like: # Example
     ["@text.literal"] = { fg = colors.cyan },
-    ["@text.uri"] = { fg = colors.cyan, undercurl = true },             -- urls, links and emails
-    ["@text.math"] = { fg = colors.blue },                              -- math environments (e.g. `$ ... $` in LaTeX)
-    ["@text.environment"] = { fg = colors.magenta },                    -- text environments of markup languages
-    ["@text.environment.name"] = { fg = colors.blue },                  -- text indicating the type of an environment
-    ["@text.reference"] = { fg = colors.magenta },                      -- references
-    ["@text.todo"] = { bg = colors.yellow },                            -- todo notes
+    ["@text.uri"] = { fg = colors.cyan, undercurl = true },           -- urls, links and emails
+    ["@text.math"] = { fg = colors.blue },                            -- math environments (e.g. `$ ... $` in LaTeX)
+    ["@text.environment"] = { fg = colors.magenta },                  -- text environments of markup languages
+    ["@text.environment.name"] = { fg = colors.blue },                -- text indicating the type of an environment
+    ["@text.reference"] = { fg = colors.magenta },                    -- references
+    ["@text.todo"] = { bg = colors.yellow },                          -- todo notes
     ["@text.note"] = { fg = colors.background, bg = colors.magenta },
     ["@text.warning"] = { fg = colors.background, bg = colors.yellow },
     ["@text.danger"] = { fg = colors.background, bg = colors.red },
-    ["@text.diff.add"] = { fg = colors.green },  -- added text (for diff files)
-    ["@text.diff.delete"] = { fg = colors.red }, -- deleted text (for diff files)
+    ["@text.diff.add"] = { fg = colors.green },    -- added text (for diff files)
+    ["@text.diff.delete"] = { fg = colors.red },   -- deleted text (for diff files)
     -- Tags
-    ["@tag"] = { fg = colors.red },                  -- Tags like html tag names.
-    ["@tag.attribute"] = { fg = colors.blue },       -- Tags like html tag names.
+    ["@tag"] = { fg = colors.red },                -- Tags like html tag names.
+    ["@tag.attribute"] = { fg = colors.blue },     -- Tags like html tag names.
     ["@tag.delimiter"] = { fg = colors.foreground }, -- Tag delimiter like < > /
     -- Language specific:
 
     -- toml
     ["@property.toml"] = { fg = colors.blue }, -- Differentiates between string and properties
     -- json
-    ["@label.json"] = { fg = colors.blue }, -- For labels: label: in C and :label: in Lua.
+    ["@label.json"] = { fg = colors.blue },  -- For labels: label: in C and :label: in Lua.
     -- lua
     ["@field.lua"] = { fg = colors.cyan },
     ["@constructor.lua"] = { fg = colors.blue }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
@@ -219,13 +218,13 @@ M.highlights_base = function(colors, opts)
     NeogitDiffDeleteHighlight = { fg = colors.red, bg = colors.red },
     NeogitDiffAddHighlight = { fg = colors.blue, bg = colors.blue },
     -- GitGutter
-    GitGutterAdd = { fg = colors.blue },       -- diff mode: Added line |diff.txt|
+    GitGutterAdd = { fg = colors.blue },     -- diff mode: Added line |diff.txt|
     GitGutterChange = { fg = colors.magenta }, -- diff mode: Changed line |diff.txt|
-    GitGutterDelete = { fg = colors.red },     -- diff mode: Deleted line |diff.txt|
+    GitGutterDelete = { fg = colors.red },   -- diff mode: Deleted line |diff.txt|
     -- GitSigns
-    GitSignsAdd = { fg = colors.blue },       -- diff mode: Added line |diff.txt|
+    GitSignsAdd = { fg = colors.blue },      -- diff mode: Added line |diff.txt|
     GitSignsChange = { fg = colors.magenta }, -- diff mode: Changed line |diff.txt|
-    GitSignsDelete = { fg = colors.red },     -- diff mode: Deleted line |diff.txt|
+    GitSignsDelete = { fg = colors.red },    -- diff mode: Deleted line |diff.txt|
     -- Telescope
     TelescopeBorder = { fg = colors.black, bg = colors.background },
     TelescopeNormal = { fg = colors.foreground, bg = colors.background },
@@ -327,24 +326,25 @@ M.highlights_base = function(colors, opts)
     healthWarning = { fg = colors.magenta },
     -- BufferLine
     BufferLineIndicatorSelected = { fg = colors.accent },
-    BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
+    BufferLineFill = { fg = colors.foreground, bg = colors.background },
+    BufferLineVisible = { bg = colors.background },
     BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
-    BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },
+    BufferLineGroupSeparator = { fg = colors.accent, bg = colors.background },
     -- Barbar
     BufferCurrentSign = { fg = colors.blue },
     BufferInactiveSign = { fg = colors.background, bg = colors.background },
     BufferOffset = { fg = colors.background, bg = colors.background },
     BufferTabpageFill = { fg = colors.background, bg = colors.background },
     -- Diagnostics support
-    DiagnosticError = { fg = colors.red },   -- red
-    DiagnosticWarn = { fg = colors.yellow }, -- yellow
-    DiagnosticInfo = { fg = colors.blue },   -- blue
-    DiagnosticHint = { fg = colors.cyan },   -- cyan
+    DiagnosticError = { fg = colors.red },                            -- red
+    DiagnosticWarn = { fg = colors.yellow },                          -- yellow
+    DiagnosticInfo = { fg = colors.blue },                            -- blue
+    DiagnosticHint = { fg = colors.cyan },                            -- cyan
     -- Underline
-    DiagnosticUnderlineError = { undercurl = true, sp = colors.red },   -- red
+    DiagnosticUnderlineError = { undercurl = true, sp = colors.red }, -- red
     DiagnosticUnderlineWarn = { undercurl = true, sp = colors.yellow }, -- yellow
-    DiagnosticUnderlineInfo = { undercurl = true, sp = colors.blue },   -- blue
-    DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan },   -- cyan
+    DiagnosticUnderlineInfo = { undercurl = true, sp = colors.blue }, -- blue
+    DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan }, -- cyan
   }
 end
 

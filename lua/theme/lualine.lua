@@ -1,9 +1,9 @@
-local core = require("pkgs.theme.core")
+local core = require("theme.core")
 local colors = core.get_palette()
 
 local M = {}
 
-function M.mklualinetheme ()
+function M.mklualinetheme()
   local custom = {}
 
   custom.normal = {

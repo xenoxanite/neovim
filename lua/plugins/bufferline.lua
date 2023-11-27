@@ -20,11 +20,11 @@ return {
         modified_icon = "●",
         close_icon = "",
         left_trunc_marker = "",
+        diagnostics = "nvim_lsp",
         right_trunc_marker = "",
         max_name_length = 18,
         max_prefix_length = 15,
         tab_size = 10,
-        diagnostics = false,
         custom_filter = function(bufnr)
           -- if the result is false, this buffer will be shown, otherwise, this
           -- buffer will be hidden.
