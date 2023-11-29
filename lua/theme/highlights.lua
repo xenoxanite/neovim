@@ -57,17 +57,17 @@ function M.highlight_all(colors, opts)
       CmpItemKindConstructor = { fg = colors.background, bg = colors.yellow },
       CmpItemKindReference = { fg = colors.background, bg = colors.yellow },
 
-      CmpItemKindFunction = { fg = colors.background, bg = colors.magenta },
-      CmpItemKindStruct = { fg = colors.background, bg = colors.magenta },
-      CmpItemKindClass = { fg = colors.background, bg = colors.magenta },
+      CmpItemKindFunction = { fg = colors.background, bg = colors.cyan },
+      CmpItemKindStruct = { fg = colors.background, bg = colors.blue },
+      CmpItemKindClass = { fg = colors.background, bg = colors.blue },
       CmpItemKindModule = { fg = colors.background, bg = colors.magenta },
       CmpItemKindOperator = { fg = colors.background, bg = colors.magenta },
 
-      CmpItemKindVariable = { fg = colors.black, bg = colors.magenta },
+      CmpItemKindVariable = { fg = colors.black, bg = colors.green },
       CmpItemKindFile = { fg = colors.black, bg = colors.white },
 
       CmpItemKindUnit = { fg = colors.background, bg = colors.yellow },
-      CmpItemKindSnippet = { fg = colors.background, bg = colors.yellow },
+      CmpItemKindSnippet = { fg = colors.background, bg = colors.teal },
       CmpItemKindFolder = { fg = colors.background, bg = colors.yellow },
 
       CmpItemKindMethod = { fg = colors.background, bg = colors.blue },
