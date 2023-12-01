@@ -31,3 +31,5 @@ vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", { noremap = true })
 vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", { noremap = true })
+
+vim.keymap.set("n", "<Leader>lh", require("core.utils").toggle_buffer_inlay_hints, opts)
