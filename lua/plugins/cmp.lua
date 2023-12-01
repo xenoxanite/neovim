@@ -57,6 +57,7 @@ return {
       Struct = " ",
       Event = " ",
       Operator = "󰆕 ",
+      Array = " ",
     }
     local options = {
       completion = {

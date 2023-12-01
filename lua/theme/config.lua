@@ -254,6 +254,7 @@ M.highlights_base = function(colors, opts)
     LspSagaCodeActionBorder = { fg = colors.lighter },
     LspSagaCodeActionTrunCateLine = { fg = colors.lighter },
     LspSagaCodeActionContent = { fg = colors.foreground },
+
     -- finder
     LspSagaLspFinderBorder = { fg = colors.lighter },
     LspSagaAutoPreview = { fg = colors.lighter },

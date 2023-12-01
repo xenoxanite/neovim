@@ -45,12 +45,21 @@ return {
       },
     }
 
-    local servers = { "nil_ls", "clangd", "rust_analyzer", "lua_ls", "tsserver" }
+    local servers = { "nil_ls", "clangd", "rust_analyzer", "lua_ls", "tsserver", "svelte" }
     for _, k in ipairs(servers) do
       lspconfig[k].setup({
         on_attach = M.on_attach,
         capabilities = M.capabilities,
       })
     end
+
+    lspconfig = {
+      rust_analyzer = {},
+      lua_ls = {
+        Lua = {
+          hint = { enable = true },
+        },
+      },
+    }
   end,
 }
