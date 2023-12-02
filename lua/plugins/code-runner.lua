@@ -9,7 +9,7 @@ return {
         java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
         python = "python3 -u",
         typescript = "deno run",
-        rust = "cd $dir && rustc $fileName && $dir/$fileNameWithoutExt",
+        rust = "cd $dir && cargo run",
         c = "cd $dir && mkdir -p bin && cd bin && gcc ../$fileName -lm -o $fileNameWithoutExt && ./$fileNameWithoutExt",
         cpp = "cd $dir && mkdir -p bin && cd bin && g++ ../$fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
       },

@@ -48,12 +48,12 @@ return {
 			end,
 		},
 		{
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lua",
-      "hrsh7th/cmp-nvim-lsp",
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-    },
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lua",
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+		},
 	},
 	config = function()
 		local luasnip = require("luasnip")
@@ -142,13 +142,6 @@ return {
 					item.kind = " " .. symbol_map[item.kind] .. " "
 					return item
 				end,
-			},
-			sources = {
-				{ name = "nvim_lsp" },
-				{ name = "luasnip" },
-				{ name = "buffer" },
-				{ name = "nvim_lua" },
-				{ name = "path" },
 			},
 			mapping = {
 				["<C-p>"] = cmp.mapping.select_prev_item(),
