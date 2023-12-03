@@ -346,6 +346,10 @@ M.highlights_base = function(colors, opts)
     DiagnosticUnderlineWarn = { undercurl = true, sp = colors.yellow }, -- yellow
     DiagnosticUnderlineInfo = { undercurl = true, sp = colors.blue }, -- blue
     DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan }, -- cyan
+
+    LspInlayHint = {
+      fg = colors.comments,
+    },
   }
 end
 
