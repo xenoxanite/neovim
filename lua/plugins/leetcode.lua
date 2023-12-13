@@ -1,20 +1,17 @@
 return {
-	"Dhanus3133/LeetBuddy.nvim",
+	"kawre/leetcode.nvim",
+	build = ":TSUpdate html",
 	dependencies = {
-		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
-	},
-	config = function()
-		require("leetbuddy").setup({
+		"nvim-lua/plenary.nvim", -- required by telescope
+		"MunifTanjim/nui.nvim",
 
-			language = "cpp",
-		})
-	end,
-	kys = {
-		{ "<leader>lq", "<cmd>LBQuestions<cr>", desc = "List Questions" },
-		{ "<leader>ll", "<cmd>LBQuestion<cr>", desc = "View Question" },
-		{ "<leader>lr", "<cmd>LBReset<cr>", desc = "Reset Code" },
-		{ "<leader>lt", "<cmd>LBTest<cr>", desc = "Run Code" },
-		{ "<leader>ls", "<cmd>LBSubmit<cr>", desc = "Submit Code" },
+		-- optional
+		"nvim-treesitter/nvim-treesitter",
+		"rcarriga/nvim-notify",
+		"nvim-tree/nvim-web-devicons",
+	},
+	opts = {
+		-- configuration goes here
 	},
 }
