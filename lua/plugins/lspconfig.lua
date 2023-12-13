@@ -12,52 +12,24 @@ return {
 		vim.o.updatetime = 250
 		vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
 
-		local M = {}
-
-		M.on_attach = function(client, _)
+		local on_attach = function(client, bufnr)
 			if vim.fn.has("nvim-0.10") == 1 then
 				vim.lsp.inlay_hint.enable(0, true)
 			end
-			client.server_capabilities.documentFormattingProvider = true
-			client.server_capabilities.documentRangeFormattingProvider = true
-			client.server_capabilities.semanticTokensProvider = nil
 		end
 
-		M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
-		M.capabilities.textDocument.foldingRange = {
-			dynamicRegistration = false,
-			lineFoldingOnly = true,
-		}
-
-		M.capabilities.textDocument.completion.completionItem = {
-			documentationFormat = { "markdown", "plaintext" },
-			snippetSupport = true,
-			preselectSupport = true,
-			insertReplaceSupport = true,
-			labelDetailsSupport = true,
-			deprecatedSupport = true,
-			commitCharactersSupport = true,
-			tagSupport = { valueSet = { 1 } },
-			resolveSupport = {
-				properties = {
-					"documentation",
-					"detail",
-					"additionalTextEdits",
-				},
-			},
-		}
+		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		local servers = { "nil_ls", "clangd", "rust_analyzer", "lua_ls", "tsserver", "svelte" }
 		for _, k in ipairs(servers) do
 			lspconfig[k].setup({
-				on_attach = M.on_attach,
-				capabilities = M.capabilities,
+				on_attach = on_attach,
+				capabilities = capabilities,
 			})
 		end
 		require("lspconfig").lua_ls.setup({
-			on_attach = M.on_attach,
-			capabilities = M.capabilities,
+			on_attach = on_attach,
+			capabilities = capabilities,
 			settings = {
 				Lua = {
 					diagnostics = {
