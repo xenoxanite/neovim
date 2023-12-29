@@ -1,4 +1,4 @@
-return {
+local bufferline = {
   "akinsho/bufferline.nvim",
   version = "*",
   dependencies = "nvim-tree/nvim-web-devicons",
@@ -79,3 +79,5 @@ return {
     keymap("n", "<leader>8", "<cmd>BufferLineGoToBuffer 9<CR>", { silent = true })
   end,
 }
+
+return bufferline

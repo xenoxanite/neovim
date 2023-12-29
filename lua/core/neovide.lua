@@ -1,5 +1,5 @@
 if vim.g.neovide then
-  vim.o.guifont = "JetBrainsMono Nerd Font:h11.8:l"
+  vim.o.guifont = "JetBrainsMono Nerd Font:h10.8:l"
   vim.opt.linespace = 3
   vim.g.neovide_cursor_vfx_mode = "railgun"
   vim.g.neovide_hide_mouse_when_typing = true

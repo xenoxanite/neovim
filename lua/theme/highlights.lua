@@ -23,21 +23,21 @@ function M.highlight_all(colors, opts)
 
   M.bulk_hi(config.highlights_base(colors, opts))
 
-  local ntree = opts.nvim_tree or { contrast = false }
+  local ntree = opts.nvim_tree or { background = false }
 
-  if ntree.contrast == true then
+  if ntree.background == true then
     M.bulk_hi({
-      NvimTreeVertSplit = { bg = colors.background, fg = colors.contrast },
+      NvimTreeVertSplit = { bg = colors.background, fg = colors.background },
       NvimTreeNormal = { bg = colors.background },
       NvimTreeNormalNC = { bg = colors.background },
-      NvimTreeEndOfBuffer = { bg = colors.background, fg = colors.contrast },
-      NvimTreeEndOfBufferNC = { bg = colors.background, fg = colors.contrast },
+      NvimTreeEndOfBuffer = { bg = colors.background, fg = colors.background },
+      NvimTreeEndOfBufferNC = { bg = colors.background, fg = colors.background },
     })
   end
 
   if vim.g.decay_cmp_block_kind == true then
     M.bulk_hi({
-      Pmenu = { fg = colors.foreground, bg = colors.contrast },
+      Pmenu = { fg = colors.foreground, bg = colors.background },
       PmenuSel = { bg = colors.lighter, fg = "NONE" },
 
       CmpItemAbbrDeprecated = { fg = colors.comments, bg = "NONE" },
@@ -67,7 +67,7 @@ function M.highlight_all(colors, opts)
       CmpItemKindFile = { fg = colors.black, bg = colors.white },
 
       CmpItemKindUnit = { fg = colors.background, bg = colors.yellow },
-      CmpItemKindSnippet = { fg = colors.background, bg = colors.teal },
+      CmpItemKindSnippet = { fg = colors.background, bg = colors.blue },
       CmpItemKindFolder = { fg = colors.background, bg = colors.yellow },
 
       CmpItemKindMethod = { fg = colors.background, bg = colors.blue },
@@ -80,8 +80,8 @@ function M.highlight_all(colors, opts)
     })
   else
     M.bulk_hi({
-      Pmenu = { fg = colors.foreground, bg = colors.contrast },
-      PmenuSel = { fg = colors.contrast, bg = colors.blue },
+      Pmenu = { fg = colors.foreground, bg = colors.background },
+      PmenuSel = { fg = colors.background, bg = colors.blue },
       CmpDocumentationBorder = { fg = colors.foreground },
       CmpItemAbbr = { fg = colors.foreground },
       CmpItemAbbrDeprecated = { fg = colors.yellow },

@@ -226,9 +226,9 @@ M.highlights_base = function(colors, opts)
     GitSignsChange = { fg = colors.magenta }, -- diff mode: Changed line |diff.txt|
     GitSignsDelete = { fg = colors.red },    -- diff mode: Deleted line |diff.txt|
     -- Telescope
-    TelescopeBorder = { fg = colors.black, bg = colors.background },
+    TelescopeBorder = { fg = colors.cyan, bg = colors.background },
     TelescopeNormal = { fg = colors.foreground, bg = colors.background },
-    TelescopeSelection = { fg = colors.background, bg = colors.accent },
+    TelescopeSelection = { fg = colors.background, bg = colors.green },
     -- Indent Blank Line
     IndentBlanklineChar = { fg = colors.black, bg = "NONE" },
     IndentBlanklineContextChar = { fg = colors.comments, bg = "NONE" },
@@ -250,7 +250,7 @@ M.highlights_base = function(colors, opts)
     NvimTreeEmptyFolderName = { fg = colors.green },
     NvimTreeStatusLineNC = { bg = colors.background, fg = colors.background },
     -- LspSaga
-    LspSagaCodeActionTitle = { fg = colors.accent },
+    LspSagaCodeActionTitle = { fg = colors.green },
     LspSagaCodeActionBorder = { fg = colors.lighter },
     LspSagaCodeActionTrunCateLine = { fg = colors.lighter },
     LspSagaCodeActionContent = { fg = colors.foreground },
@@ -259,7 +259,7 @@ M.highlights_base = function(colors, opts)
     LspSagaLspFinderBorder = { fg = colors.lighter },
     LspSagaAutoPreview = { fg = colors.lighter },
     LspSagaFinderSelection = { fg = colors.cursorline },
-    TargetFileName = { fg = colors.accent },
+    TargetFileName = { fg = colors.green },
     FinderParam = { fg = colors.cyan },
     FinderVirtText = { fg = colors.magenta },
     DefinitionsIcon = { fg = colors.blue },
@@ -273,14 +273,14 @@ M.highlights_base = function(colors, opts)
     ImplementsCount = { fg = colors.magenta },
     --finder spinner
     FinderSpinnerBorder = { fg = colors.lighter },
-    FinderSpinnerTitle = { fg = colors.accent },
-    FinderSpinner = { fg = colors.accent },
+    FinderSpinnerTitle = { fg = colors.green },
+    FinderSpinner = { fg = colors.green },
     FinderPreviewSearch = { fg = colors.green },
     -- definition
     DefinitionBorder = { fg = colors.lighter },
-    DefinitionArrow = { fg = colors.accent },
+    DefinitionArrow = { fg = colors.green },
     DefinitionSearch = { fg = colors.green },
-    DefinitionFile = { fg = colors.accent },
+    DefinitionFile = { fg = colors.green },
     -- hover
     LspSagaHoverBorder = { fg = colors.lighter },
     LspSagaHoverTrunCateLine = { fg = colors.lighter },
@@ -298,8 +298,8 @@ M.highlights_base = function(colors, opts)
     LspSagaInfoTrunCateLine = { link = "DiagnosticInfo" },
     LspSagaHintTrunCateLine = { link = "DiagnosticHint" },
     LspSagaDiagnosticBorder = { fg = colors.lighter },
-    LspSagaDiagnosticHeader = { fg = colors.accent },
-    DiagnosticQuickFix = { fg = colors.accent },
+    LspSagaDiagnosticHeader = { fg = colors.green },
+    DiagnosticQuickFix = { fg = colors.green },
     DiagnosticMap = { fg = colors.magenta },
     DiagnosticLineCol = { fg = colors.black },
     LspSagaDiagnosticTruncateLine = { link = "LspSagaDiagnosticBorder" },
@@ -317,7 +317,7 @@ M.highlights_base = function(colors, opts)
     LSOutlinePreviewBorder = { fg = colors.lighter },
     OutlineIndentEvn = { fg = colors.magenta },
     OutlineIndentOdd = { fg = colors.yellow },
-    OutlineFoldPrefix = { fg = colors.accent },
+    OutlineFoldPrefix = { fg = colors.green },
     OutlineDetail = { fg = colors.black },
     -- all floatwindow of lspsaga
     LspFloatWinNormal = { link = "Normal" },
@@ -326,11 +326,11 @@ M.highlights_base = function(colors, opts)
     healthSuccess = { fg = colors.blue },
     healthWarning = { fg = colors.magenta },
     -- BufferLine
-    BufferLineIndicatorSelected = { fg = colors.accent },
+    BufferLineIndicatorSelected = { fg = colors.green },
     BufferLineFill = { fg = colors.foreground, bg = colors.background },
     BufferLineVisible = { bg = colors.background },
-    BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
-    BufferLineGroupSeparator = { fg = colors.accent, bg = colors.background },
+    BufferLineGroupLabel = { fg = colors.contrast, bg = colors.green },
+    BufferLineGroupSeparator = { fg = colors.green, bg = colors.background },
     -- Barbar
     BufferCurrentSign = { fg = colors.blue },
     BufferInactiveSign = { fg = colors.background, bg = colors.background },

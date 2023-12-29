@@ -1,3 +1,3 @@
-package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/nvim-colors.lua"
+package.path = package.path .. ";" .. os.getenv("HOME") .. "/.config/nvimc.lua"
 
 return require("nvim-colors")
