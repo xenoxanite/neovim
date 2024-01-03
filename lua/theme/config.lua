@@ -27,7 +27,7 @@ M.highlights_base = function(colors, opts)
 		CursorColumn = { bg = colors.background },
 		ColorColumn = { bg = colors.background },
 		NormalFloat = { bg = colors.background },
-		Visual = { bg = colors.green, fg = colors.foreground },
+		Visual = { bg = colors.brightblack, fg = colors.background },
 		VisualNOS = { bg = colors.background },
 		WarningMsg = { fg = colors.yellow, bg = colors.background },
 		DiffAdd = { bg = colors.background, fg = colors.green },

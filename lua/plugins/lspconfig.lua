@@ -20,7 +20,7 @@ return {
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    local servers = { "nil_ls", "clangd", "rust_analyzer", "lua_ls", "tsserver", "svelte" }
+    local servers = { "nil_ls", "clangd", "rust_analyzer", "lua_ls", "tsserver", "svelte", "jedi_language_server" }
     for _, k in ipairs(servers) do
       lspconfig[k].setup({
         on_attach = on_attach,

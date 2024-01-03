@@ -4,7 +4,6 @@ return {
 	config = function()
 		local fidget = require("fidget")
 		fidget.setup({})
-
 		vim.notify = fidget.notify
 	end,
 }

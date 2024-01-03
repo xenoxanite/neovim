@@ -78,6 +78,7 @@ return {
 
 		local cmp = require("cmp")
 		local symbol_map = {
+			Codeium = "",
 			Array = "󰅨 ",
 			Boolean = "󰔡 ",
 			Class = "󰌗 ",
@@ -181,6 +182,7 @@ return {
 			sources = {
 				{ name = "luasnip" },
 				{ name = "nvim_lua" },
+				{ name = "codeium" },
 				{ name = "nvim_lsp" },
 				{ name = "buffer" },
 				{ name = "path" },
