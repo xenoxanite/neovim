@@ -15,3 +15,4 @@ return {
 		) -- refresh file explorer
 	end,
 }
+
