@@ -1,6 +1,6 @@
 # nvim
 My previous neovim configuration
-Cant delete this cause it took a lot of affort to build.
+I cant delete this one cause it tooks a lot of affort to build.
 
 # Gallery
 
